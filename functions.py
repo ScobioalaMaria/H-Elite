@@ -1,7 +1,9 @@
 import csv
 final_dict=[]
 
-def loadCSV():
+def loadCSV() -> dict:
+    """The function loads the CSV file into a dictionary
+    making it easier to use"""
     with open('artists.csv', newline='') as csvfile:
         reader = list(csv.reader(csvfile))
         for row in reader[1:]:
@@ -14,4 +16,3 @@ def loadCSV():
             temp_dict["movement"] = row[5]
             final_dict.append(temp_dict)
     return final_dict
-  

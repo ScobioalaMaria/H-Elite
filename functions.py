@@ -1,4 +1,5 @@
 import csv
+import artist
 final_dict=[]
 
 def loadCSV() -> dict:
@@ -16,3 +17,14 @@ def loadCSV() -> dict:
             temp_dict["movement"] = row[5]
             final_dict.append(temp_dict)
     return final_dict
+
+def createObject(dictionary: dict):
+    """It creates an object Artist starting from 
+    a dictionary"""
+    object = artist.Artist(dictionary['name_surname'], 
+                           dictionary['birthday'], 
+                           dictionary['gender'], 
+                           dictionary['nationality'],
+                           dictionary['death'],
+                           dictionary['movement'])
+    return object

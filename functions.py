@@ -28,3 +28,16 @@ def createObject(dictionary: dict):
                            dictionary['death'],
                            dictionary['movement'])
     return object
+
+def writeCSV(dictionary: dict):
+    """It writes a new line into the CSV file
+    from a dictionary"""
+    with open('artists.csv', 'a', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow([dictionary['name_surname'], 
+                           dictionary['birthday'], 
+                           dictionary['gender'], 
+                           dictionary['nationality'],
+                           dictionary['death'],
+                           dictionary['movement']])
+    return

@@ -1,7 +1,11 @@
 import argparse
 import os
 import functions
-global artist 
+import artist
+global artistDict
 
-artist = functions.loadCSV()
-print(artist)
+artistDict = functions.loadCSV()
+print(artistDict[0])
+
+Tobject = functions.createObject(artistDict[0]) 
+print(Tobject.movement)

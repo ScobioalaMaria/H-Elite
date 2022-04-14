@@ -1,4 +1,5 @@
 import csv
+from operator import truediv
 import artist
 final_dict=[]
 
@@ -40,4 +41,16 @@ def writeCSV(dictionary: dict):
                            dictionary['nationality'],
                            dictionary['death'],
                            dictionary['movement']])
+    return 
+
+def addArtist():
+    """It requests the informations and creates a dictionary"""
+    temp_dict = {}
+    temp_dict["name_surname"] = input("Enter the name and surname: ")
+    temp_dict["birthday"] = input("Enter the birthday dd/mm/yyyy: ")
+    temp_dict["gender"] = input("Enter the gender: ")
+    temp_dict["nationality"] = input("Enter the nationality: ")
+    temp_dict["death"] = input("Enter the year of death yyyy: ")
+    temp_dict["movement"] = input("Enter the movement: ")
+    writeCSV(temp_dict)
     return

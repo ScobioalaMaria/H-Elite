@@ -1,5 +1,4 @@
 import csv
-from operator import truediv
 import artist
 final_dict=[]
 

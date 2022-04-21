@@ -41,3 +41,16 @@ def writeCSV(dictionary: dict):
                            dictionary['death'],
                            dictionary['movement']])
     return
+
+def search(searchW: string):
+    """Search function, searches inside the CSV file and returns a list 
+    with objects that correspond to the search done"""
+    with open('artists.csv', newline='') as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+        result_list = []
+        for line in csv_reader:
+            if searchW in line['Name and Surname']:
+                result_list.append(line)
+    if not result_list:
+        return "Sorry I couldn't find any match"
+    return result_list

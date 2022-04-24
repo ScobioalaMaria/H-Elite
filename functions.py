@@ -13,7 +13,7 @@ def loadCSV() -> dict:
             temp_dict["birthday"] = row[1]
             temp_dict["gender"] = row[2]
             temp_dict["nationality"] = row[3]
-            temp_dict["death"] = row[4]
+            temp_dict["ydeath"] = row[4]
             temp_dict["movement"] = row[5]
             final_dict.append(temp_dict)
     return final_dict
@@ -25,7 +25,7 @@ def createObject(dictionary: dict):
                            dictionary['birthday'], 
                            dictionary['gender'], 
                            dictionary['nationality'],
-                           dictionary['death'],
+                           dictionary['ydeath'],
                            dictionary['movement'])
     return object
 
@@ -38,7 +38,7 @@ def writeCSV(dictionary: dict):
                            dictionary['birthday'], 
                            dictionary['gender'], 
                            dictionary['nationality'],
-                           dictionary['death'],
+                           dictionary['ydeath'],
                            dictionary['movement']])
     return 
 
@@ -49,7 +49,7 @@ def addArtist():
     temp_dict["birthday"] = input("Enter the birthday dd/mm/yyyy: ")
     temp_dict["gender"] = input("Enter the gender: ")
     temp_dict["nationality"] = input("Enter the nationality: ")
-    temp_dict["death"] = input("Enter the year of death yyyy: ")
+    temp_dict["ydeath"] = input("Enter the year of death yyyy: ")
     temp_dict["movement"] = input("Enter the movement: ")
     writeCSV(temp_dict)
     return

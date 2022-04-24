@@ -60,9 +60,9 @@ def search(searchW: string):
     with open('artists.csv', newline='') as csv_file:
         csv_reader = csv.DictReader(csv_file)
         result_list = []
+        results_found = 0 
         for line in csv_reader:
-            if searchW in line['Name and Surname']:
+            if searchW in line['name_surname']:
                 result_list.append(line)
-    if not result_list:
-        return "Sorry I couldn't find any match"
-    return result_list
+                results_found += 1 
+    return results_found,result_list

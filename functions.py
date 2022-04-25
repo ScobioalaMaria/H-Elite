@@ -1,5 +1,7 @@
 import csv
 import artist
+import string
+from prettytable import PrettyTable as pt
 final_dict=[]
 
 def loadCSV() -> dict:
@@ -31,6 +33,16 @@ def createObjectList(lista: list):
                            i['movement'])
         result_list.append(oggetto)
     return result_list
+
+def displayObject(lista: list):     
+    """It prints nicely from a list of objects"""   
+    tb = pt()
+    tb.title = 'H-ELITE results of the query'
+    tb.field_names = ["Name & Surname","Birthday", "Gender","Nationality", "Year of death", "Movement"]
+    for obj in lista:
+        tb.add_row([obj.name_surname,obj.birthday, obj.gender, obj.nationality, obj.death,obj.movement])
+    print(tb)
+    return
 
 def writeCSV(dictionary: dict):
     """It writes a new line into the CSV file
@@ -65,6 +77,17 @@ def search(searchW: string):
         result_list_t = []
         for line in csv_reader:
             if searchW in line['name_surname']:
+                result_list_t.append(line)
+    result_list = createObjectList(result_list_t)
+    return result_list
+def searchMovement(searchW: string):
+    """Search function, searches inside the CSV file and returns a list 
+    with objects that correspond to the search done"""
+    with open('artists.csv', newline='') as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+        result_list_t = []
+        for line in csv_reader:
+            if searchW in line['movement']:
                 result_list_t.append(line)
     result_list = createObjectList(result_list_t)
     return result_list

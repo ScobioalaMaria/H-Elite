@@ -68,3 +68,18 @@ def search(searchW: string):
                 result_list_t.append(line)
     result_list = createObjectList(result_list_t)
     return result_list
+
+def compareArtists(searchW: string):
+    """Compare artists function, given an artist, 
+    it shows you the artist and all the other artists
+    that have the same nationality and the same art movement"""
+    artist_found = search(searchW)
+    with open('artists.csv', newline='') as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+        result_list_t = []
+        for line1 in csv_reader:
+            if artist_found[0].nationality in line1['nationality']:
+                if artist_found[0].movement in line1['movement']:
+                    result_list_t.append(line1)
+    result_list = createObjectList(result_list_t)
+    return result_list

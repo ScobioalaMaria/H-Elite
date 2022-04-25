@@ -18,16 +18,19 @@ def loadCSV() -> dict:
             final_dict.append(temp_dict)
     return final_dict
 
-def createObject(dictionary: dict):
-    """It creates an object Artist starting from 
-    a dictionary"""
-    object = artist.Artist(dictionary['name_surname'], 
-                           dictionary['birthday'], 
-                           dictionary['gender'], 
-                           dictionary['nationality'],
-                           dictionary['ydeath'],
-                           dictionary['movement'])
-    return object
+def createObjectList(lista: list):
+    """It creates a list of objects Artist starting from 
+    a list"""
+    result_list = []
+    for i in lista:
+        oggetto=artist.Artist(i['name_surname'], 
+                           i['birthday'], 
+                           i['gender'], 
+                           i['nationality'],
+                           i['ydeath'],
+                           i['movement'])
+        result_list.append(oggetto)
+    return result_list
 
 def writeCSV(dictionary: dict):
     """It writes a new line into the CSV file
@@ -59,10 +62,9 @@ def search(searchW: string):
     with objects that correspond to the search done"""
     with open('artists.csv', newline='') as csv_file:
         csv_reader = csv.DictReader(csv_file)
-        result_list = []
-        results_found = 0 
+        result_list_t = []
         for line in csv_reader:
             if searchW in line['name_surname']:
-                result_list.append(line)
-                results_found += 1 
-    return results_found,result_list
+                result_list_t.append(line)
+    result_list = createObjectList(result_list_t)
+    return result_list

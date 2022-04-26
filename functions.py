@@ -80,6 +80,7 @@ def search(searchW: string):
                 result_list_t.append(line)
     result_list = createObjectList(result_list_t)
     return result_list
+
 def searchMovement(searchW: string):
     """Search function, searches inside the CSV file and returns a list 
     with objects that correspond to the search done"""

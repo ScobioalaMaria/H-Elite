@@ -23,7 +23,7 @@ def loadCSV() -> list:
 
 def createObjectList(lista: list):
     """It creates a list of objects Artist starting from 
-    a list"""
+    a list containing dictionaries"""
     result_list = []
     for i in lista:
         oggetto = artist.Artist(i['name_surname'],
@@ -76,7 +76,6 @@ def search(searchW: string):
         for line in csv_reader:
             if searchW.casefold() in line['name_surname'].casefold():
                 result_list_t.append(line)
-        print(result_list_t)
     result_list = createObjectList(result_list_t)
     return result_list
 

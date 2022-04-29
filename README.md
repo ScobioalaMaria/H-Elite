@@ -43,6 +43,8 @@ These are the instructions to run our project locally on your machine.
 ### Prerequisites
 
 List of things you need to use the software and how to install them.
+We used a module called prettytable please install it before trying to run our program. 
+
   ```sh
   python3 -m pip install prettytable
   ```
@@ -117,6 +119,11 @@ This is an example:
 
 The project has been tested with the unittest suite that you can find in the folder tests.
 Tests regarding the input taken have not been conducted as the program does not run if you don't give the arguments to the argparse 
+<br>
+To run the test suite do the following:
+  ```sh
+  python3 -m unittest tests/test_functions.py
+  ```
 
 <p align="right">(<a href="#top">Back to top</a>)</p>
 

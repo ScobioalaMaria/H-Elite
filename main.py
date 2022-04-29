@@ -25,8 +25,13 @@ parser.add_argument('--compare','-c', type=str, nargs=1, metavar=('artist'),
                     help='Compare artists by nationality and movement by inputting ones name')
 
 args = parser.parse_args()
+###
+if not any(vars(args).values()):
+    print("Good morning, you have not made any selection,\nplease use:  \nmain.py -h \nor \nmain.py --help")
+### 
 
 if args.view:
+    print((functions.loadCSV()))
     result = functions.createObjectList(functions.loadCSV())
     functions.displayObject(result)
 

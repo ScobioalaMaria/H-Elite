@@ -5,7 +5,7 @@
 <h3 align="center">H-Elite</h3>
 
   <p align="center">
-    Lab of software development project
+    Lab of software project development
   </p>
 </div>
 

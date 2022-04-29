@@ -19,6 +19,12 @@ class TestFunctions(unittest.TestCase):
         lista.append(oggetto)
         assert lista[0].name_surname == actual[0].name_surname
         
+     def test_search(self):
+        actual = functions.search('Caravaggio')
+        oggetto = artist.Artist('Caravaggio','29/9/1571','Male','Italian','1610','Baroque')
+        lista=[]
+        lista.append(oggetto)
+        assert lista[0].name_surname == actual[0].name_surname
 
 if __name__ == '__main__':
     unittest.main()

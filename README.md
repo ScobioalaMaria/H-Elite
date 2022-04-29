@@ -115,7 +115,8 @@ This is an example:
 <!-- TESTS -->
 ## Tests
 
-Work in progress....
+The project has been tested with the unittest suite that you can find in the folder tests.
+Tests regarding the input taken have not been conducted as the program does not run if you don't give the arguments to the argparse 
 
 <p align="right">(<a href="#top">Back to top</a>)</p>
 

@@ -31,7 +31,6 @@ if not any(vars(args).values()):
 ### 
 
 if args.view:
-    print((functions.loadCSV()))
     result = functions.createObjectList(functions.loadCSV())
     functions.displayObject(result)
 

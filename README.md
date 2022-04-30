@@ -61,7 +61,7 @@ You can then run the file main.py using python
 <!--USAGE -->
 ## Usage
 
-The aim of this project is the development of a software where you can save data about your favourite artsist, we have already added some arstists.
+The aim of this project is the development of a software where you can save data about your favourite artist, we have already added some artists.
 
 In order to run the program, to understand the commands you should start from here:
 
